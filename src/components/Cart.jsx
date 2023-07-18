@@ -1,7 +1,9 @@
 import './Cart.css'
 import { useCart } from '../hooks/useCart'
+import { useState } from 'react'
 
 function CartItem ({thumbnail, price, title, quantity, addToCart}) {
+    
     return(
         <li>
             
@@ -23,10 +25,11 @@ function CartItem ({thumbnail, price, title, quantity, addToCart}) {
 
 export function Cart (){
     const { addToCart, clearCart, cart } = useCart()
+    
 
     return(
         <>
-            <label htmlFor="cartButton" className='cart-button'>Cart</label>
+            <label htmlFor="cartButton" className='cart-button'>🛒</label>
             <input 
                 id="cartButton" 
                 type="checkbox" 

@@ -1,7 +1,12 @@
+main{
+    margin: 0 auto;
+    max-width: 1400px;
+}
 main ul{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
+    padding: 0;
     place-items: center;
 }
 main ul li{
@@ -10,6 +15,7 @@ main ul li{
     align-items: center;
     width: 250px;
     height: 300px;
+    margin: 0;
     padding: 14px;
     border-radius: 10px;
     background-color: gray;
@@ -32,7 +38,13 @@ img {
 .add-cart{
     background-color: lightblue;
 }
+.add-cart:hover{
+    cursor: pointer;
+}
 
 .remove-cart{
     background-color: gray;
+}
+.remove-cart:hover{
+    cursor: pointer;
 }

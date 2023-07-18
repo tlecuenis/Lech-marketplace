@@ -7,6 +7,7 @@ export function Filters () {
     const [minPrice, setMinPrice] = useState(0)
     const minPirceFilterId = useId()
     const categoryFilterId = useId()
+    const [isOpen, setIsOpen] = useState(false)
 
     const handleChangeMinPrice = (e) =>{
         // prevState es el objeto entero del useFilter, osea {category: 'all', minPrice: 0}
@@ -33,7 +34,20 @@ export function Filters () {
 
     return(
         <section className="filters">
-            <div>
+            <label 
+                className="filter-mobile" 
+                htmlFor="filter-mobile" 
+                onClick={() => setIsOpen(!isOpen)}
+            >
+                {isOpen === true ? 'Filters ✖' : 'Filters ▼'}
+            </label>
+            <input
+                id='filter-mobile'
+                type="checkbox" 
+                hidden
+                
+            />
+            <div className={isOpen ? 'is-open' : ''}>
                 <label htmlFor={minPirceFilterId}>Min price:</label>
                 <input 
                     type="range" 
@@ -44,15 +58,17 @@ export function Filters () {
                     value={filters.minPrice}
                 />
                 <span>${filters.minPrice}</span>
-            
             </div>
-            <div>
+            <div className={isOpen ? 'is-open' : ''}>
                 <label htmlFor={categoryFilterId}>Category</label>
                 <select id={categoryFilterId} onChange={handleChangeCategory}>
                     <option value="all">All</option>
                     <option value="laptops">Laptops</option>
                     <option value="smartphones">Smartphones</option>
-                    
+                    <option value="home-decoration">Home decoration</option>
+                    <option value="fragrances">Fragrances</option>
+                    <option value="skincare">Skincare</option>
+                    <option value="groceries">Groceries</option>
                 </select>
             </div>
         </section>

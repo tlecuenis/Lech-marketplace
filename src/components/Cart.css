@@ -1,7 +1,8 @@
 .cart-button{
-    position: absolute;
+    /* position: absolute;
     right: 20px;
-    top: 20px;
+    top: 20px; */
+    margin-right: 10%;
     font-size: 1.4rem;
     color: blue;
     z-index: 3;
@@ -19,7 +20,7 @@
     align-items: center;
     position: absolute;
     right: 0;
-    top: 0;
+    top: 0px;
     min-height: 100%;
     padding: 30px 20px;
     background-color: black;
@@ -31,6 +32,11 @@
     display: flex;
     
 }
+/* .cart-button ~ #cartButton:checked ~ .cart-button{    
+    position: absolute !important;
+    right: 20px !important;
+    top: 10px !important;
+} */
 
 .cart ul{
     list-style-type: none;

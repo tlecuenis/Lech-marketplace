@@ -8,3 +8,22 @@
     display: flex;
     gap: 5px;
 }
+.filters .is-open{
+    display: block;
+}
+.filter-mobile{
+    display: none;
+
+}
+
+@media (max-width: 425px){
+    .filters > div{
+        display: none;
+    }
+    .filter-mobile{
+        display: block;
+    }
+    .filters{
+        flex-direction: column;
+    }
+}
