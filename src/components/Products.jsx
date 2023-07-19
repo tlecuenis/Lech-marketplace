@@ -11,7 +11,9 @@ export function Products ({ products }) {
     return(
         <main>
             <ul>
-                {products.map(product =>{
+                { products.length === 0 
+                    ? <p>No matches for your search</p>  
+                    : products.map(product =>{
                     const isProductInCart = checkProductInCart(product)
                     return(
                     <li key={product.id}>

@@ -9,14 +9,15 @@ import { CartProvider } from "./context/cart"
 function App() {
   const [products] = useState(initialProducts)
   const {filterProducts} = useFilters()
+  const [searchProducts, setSearchProducts] = useState(products)
   
-  const filteredProducts = filterProducts(products)
+  const filteredProducts = filterProducts(searchProducts)
   return (
     <CartProvider>
       {/* le pasamos al header el setFilters para que se lo pase a Filters y coloque los filtros */}
       {/* no lo podemos crear un estado directamente en header porque acá tenemos el renderizado de productos y los cálculos */}
       {/* Esto se llama prop-drilling */}
-        <Header />
+        <Header products={products} setSearchProducts={setSearchProducts}/>
         <Products products={filteredProducts}/>
     </CartProvider>
   )

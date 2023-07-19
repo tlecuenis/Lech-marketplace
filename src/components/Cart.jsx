@@ -25,11 +25,12 @@ function CartItem ({thumbnail, price, title, quantity, addToCart}) {
 
 export function Cart (){
     const { addToCart, clearCart, cart } = useCart()
+    const [isOpen, setIsOpen] = useState(false)
     
 
     return(
         <>
-            <label htmlFor="cartButton" className='cart-button'>🛒</label>
+            <label htmlFor="cartButton" className={isOpen === true ? 'cart-button opened-cart' : 'cart-button'} onClick={() => setIsOpen(!isOpen)}>{isOpen === true ? '❌' : '🛒'}</label>
             <input 
                 id="cartButton" 
                 type="checkbox" 
@@ -41,7 +42,7 @@ export function Cart (){
                 <ul>
                     {
                         cart.length === 0 
-                            ? <p>The cart is empty. Add products to checkout.</p>
+                            ? <p className='little-text'>The cart is empty. Add products to checkout.</p>
                             : cart.map(product =>(
                                 <CartItem key={product.id} addToCart={() => addToCart(product)} {...product} />
                             ))
