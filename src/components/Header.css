@@ -1,6 +1,6 @@
 header{
     padding: 10px 0;
-    background-color: #5e5e5e;
+    background-color: #1d2d44;
 
 }
 .navigation-bar{
@@ -10,8 +10,10 @@ header{
     align-items: center;
     
     gap: 20px;
-    margin: 0;
+    margin: 0 auto;
     padding: 10px 0;
+
+    max-width: 1800px;
     
 }
 
@@ -20,6 +22,7 @@ header{
     margin: 0;
     padding: 0;
     padding-left: 10%;
+    color: white;
 
 }
 .navigation-bar > div{
@@ -32,6 +35,7 @@ header{
     width: 70%;
     max-width: 500px;
     height: 1.5rem;
+    padding-left: 8px;
     border-top-left-radius: 0.8rem;
     border-bottom-left-radius: 0.8rem;
     border: 2px solid transparent;
@@ -40,12 +44,20 @@ header{
 }
 .navigation-bar input:focus{
     border: 2px solid black;
+    
 }
 .navigation-bar > div > button{
     border-top-right-radius: 0.8rem;
     border-bottom-right-radius: 0.8rem;
     border: none;
     background-color: white;
+    cursor: pointer;
+}
+
+.filters{
+    color: white;
+    max-width: 1800px;
+    margin: 0 auto;
 }
 
 

@@ -16,6 +16,14 @@
 
 }
 
+input[type="range"] {
+    cursor: pointer;
+}
+
+select{
+    cursor: pointer;
+}
+
 @media (max-width: 425px){
     .filters > div{
         display: none;

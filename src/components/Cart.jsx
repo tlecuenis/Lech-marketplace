@@ -2,21 +2,18 @@ import './Cart.css'
 import { useCart } from '../hooks/useCart'
 import { useState } from 'react'
 
-function CartItem ({thumbnail, price, title, quantity, addToCart}) {
+function CartItem ({image, price, title, quantity, addToCart}) {
     
     return(
         <li>
             
-            <img src={thumbnail} alt={title} />
+            <img src={image} alt={title} />
             
-            <p>
-                <strong>{title}</strong> ${price}
-            </p>
+            <p>{title}</p>
+            <p>${price * quantity}</p>
 
             <footer>
-                <small>
-                    Quantity: {quantity}
-                </small>
+                <p>Quantity: {quantity}</p>
                 <button onClick={addToCart}>+</button>
             </footer>
         </li>

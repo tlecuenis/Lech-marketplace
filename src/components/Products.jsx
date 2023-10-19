@@ -17,9 +17,12 @@ export function Products ({ products }) {
                     const isProductInCart = checkProductInCart(product)
                     return(
                     <li key={product.id}>
-                        <img src={product.thumbnail} alt="" />
-                        <p>{product.title}</p>
-                        <p>{product.description}</p>    
+                        <img src={product.image} alt="" />
+                        <p title={product.title}>{product.title.substring(0,20) + '...'}</p>
+                        {product.description.length > 100 
+                            ? <p title={product.description}>{product.description.substring(0,100) + '...'}</p> 
+                            : <p>{product.description}</p>
+                        }
                         <p>${product.price}</p>
                         <button className={isProductInCart ? 'remove-cart' : 'add-cart'} onClick={() => {isProductInCart 
                             ? removeFromCart(product) 

@@ -16,19 +16,20 @@
 .cart{
     display: none;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     position: absolute;
     right: 0;
     top: 0px;
     min-height: 100%;
+    width: 300px;
     padding: 30px 20px;
-    background-color: black;
+    background-color: #0d1321;
     color: white;
     z-index: 2;
 }
 .cart strong{
     font-size: 1.3rem;
+
 }
 
 .cart-button ~ #cartButton:checked ~ .cart{
@@ -37,7 +38,6 @@
 }
 
 .opened-cart{    
-    /* está limitado el borde pq en el body está limitado el width */
     margin-right: 0;
     position: absolute;
     right: 10px;
@@ -55,7 +55,23 @@
     font-size: 1rem;
 }
 .cart ul li{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     margin-top: 30px;
+}
+
+.cart ul li img{
+    margin: 0 auto;
+}
+
+.cart ul li p{
+    font-size: 1rem;
+    padding: 0;
+}
+
+button{
+    cursor: pointer;
 }
 
 @media (max-width: 425px){
